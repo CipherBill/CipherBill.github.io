@@ -9,6 +9,18 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
     <title>Cipherbill.GitHub.io by CipherBill</title>
+    <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+A_="Ą"
+a_="ą"
+E_="Ę"
+e_="ę"
+O_="Ó"
+o_="ó"
+S_="Ś"
+s_="ś"
+Z_="Ź"
+z_="ź"
+</SCRIPT>
   </head>
 
   <body>
@@ -52,7 +64,26 @@
 <p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
       </section>
     </div>
+<form id="myform" action="demo_form.asp">
+  Phrase: <input type="text" id = "input1" name="CountVowels" value="Put   Phrase Here"><br>
+  <input type="button" id = "btn1" value="Check for Vowels">
+</form>
+<script>function vow(form){
+  var a = form.CountVowels.value;
+  var matches = a.match(/[aąeęioóuy]/ig);
+  var flag = 0;
+  if (matches != null)
+    flag = matches.length;
+  alert(flag);
+}
 
+function init(){
+  var button1 = document.getElementById("btn1")
+  button1.onclick = function() { vow(document.getElementById("myform")); }
+}
+
+window.onload = init;    
+</script>
     
   </body>
 </html>
